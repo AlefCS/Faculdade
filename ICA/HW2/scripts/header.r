@@ -5,5 +5,6 @@ library(xtable)
 library(corrplot)
 library(lmridge)
 library(elasticnet)
+library(pls)
 
 data("solubility")

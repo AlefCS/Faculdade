@@ -41,7 +41,6 @@ abline(h = 0, col = "darkgrey", lty = 2)
 ctrl = trainControl(method = "cv", number = 10)
 
 # Treino
-set.seed(100)
 lmFitCV = train(Solubility ~ .,
                 data = trainingData,
                 method = "lm",

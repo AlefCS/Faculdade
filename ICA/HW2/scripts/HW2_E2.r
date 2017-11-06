@@ -61,7 +61,6 @@ abline(h = 0, col = "darkgrey", lty = 2)
 ## Regressão linear penalizada com cross validation
 # Treino
 ridgeGrid = data.frame(.lambda = seq(.01, .1, length.out = 10))
-set.seed(100)
 ridgeRegFit = train(Solubility ~ .,
                     method = "ridge",
                     data = trainingData,
