@@ -1,5 +1,9 @@
 # PDF contendo as questões
 HW1/TI0077_HW1_assignment.pdf
+HW2/HW2_assignment.pdf
 
-# HW2 - apenas para teste
-HW2/**
+# Arquivos Rproject
+**/HW2.Rproj
+**/.RData
+**/.Rhistory
+**/.Rproj.user/**
