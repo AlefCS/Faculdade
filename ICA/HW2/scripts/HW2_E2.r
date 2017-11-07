@@ -1,3 +1,8 @@
+# Importando bibliotecas necessárias
+library(lmridge)
+library(caret)
+library(xtable)
+
 ## Regressão linear penalizada
 # Treino
 # Criando modelos penalizados
@@ -61,6 +66,7 @@ abline(h = 0, col = "darkgrey", lty = 2)
 ## Regressão linear penalizada com cross validation
 # Treino
 ridgeGrid = data.frame(.lambda = seq(.01, .1, length.out = 10))
+set.seed(100) # Necessário para se chegar aos mesmos resultados
 ridgeRegFit = train(Solubility ~ .,
                     method = "ridge",
                     data = trainingData,

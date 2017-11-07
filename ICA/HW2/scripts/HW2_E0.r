@@ -1,3 +1,8 @@
+library(e1071)
+library(caret)
+library(xtable)
+library(corrplot)
+
 ## 1. Cálculo da skewness dos dados originais
 previousSkewness = vector("list", length(solTrainX))
 
@@ -66,6 +71,7 @@ trainingData$Solubility = solTrainY
 corrplot(cor(trainingData[209:229]), order = "hclust", type = "lower", method = "number", number.cex = 0.5)
 
 ## Redução de predictors com base na correlação
+# Será utilizado na OLR
 altaCorr = findCorrelation(cor(trainingData), 0.9)
-trainingData = trainingData[-altaCorr]
-solTestXtrans = solTestXtrans[-altaCorr]
+trainingDataFiltered = trainingData[-altaCorr]
+solTestXtransFiltered = solTestXtrans[-altaCorr]

@@ -1,12 +1,15 @@
+# Importando bibliotecas necessárias
+library(caret)
+
 ## Regressão linear comum
 # Treino
 # Criação do modelo a partir do conjunto de dados
-lmFit1 = lm(Solubility ~ ., data = trainingData)
+lmFit1 = lm(Solubility ~ ., data = trainingDataFiltered)
 
 # Predição
 # A partir do modelo e de um conjunto de entradas
 # observadas, iremos tentar predizer qual a saída.
-lmPred1 = predict(lmFit1, solTestXtrans)
+lmPred1 = predict(lmFit1, solTestXtransFiltered)
 
 # Criando conjunto predicted + observed
 lmPred1.values = data.frame(obs = solTestY, pred = lmPred1)
@@ -41,8 +44,9 @@ abline(h = 0, col = "darkgrey", lty = 2)
 ctrl = trainControl(method = "cv", number = 10)
 
 # Treino
+set.seed(100) # Necessário para se chegar aos mesmos resultados
 lmFitCV = train(Solubility ~ .,
-                data = trainingData,
+                data = trainingDataFiltered,
                 method = "lm",
                 trControl = ctrl)
 

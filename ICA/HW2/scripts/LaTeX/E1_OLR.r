@@ -1,12 +1,12 @@
  ## %*{\color[rgb]{0.234,0.5,0.191} Regressão linear comum*)
  # Treino
  # %*{\color[rgb]{0.234,0.5,0.191} Criação do modelo a partir do conjunto de dados*)
- lmFit1 = lm(Solubility ~ ., data = trainingData)
+ lmFit1 = lm(Solubility ~ ., data = trainingDataFiltered)
 
  # %*{\color[rgb]{0.234,0.5,0.191} Predição*)
  # A partir do modelo e de um conjunto de entradas
  # %*{\color[rgb]{0.234,0.5,0.191} observadas, iremos tentar predizer qual a saída.*)
- lmPred1 = predict(lmFit1, solTestXtrans)
+ lmPred1 = predict(lmFit1, solTestXtransFiltered)
 
  # Criando conjunto predicted + observed
  lmPred1.values = data.frame(obs = solTestY, pred = lmPred1)
