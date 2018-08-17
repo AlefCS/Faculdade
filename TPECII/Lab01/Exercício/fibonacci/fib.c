@@ -6,5 +6,5 @@ void main() {
 	unsigned short n;
 
 	scanf("%hu", &n);
-	printf("%lu Fibonacci: %d\n", n, fib(n));
+	printf("%luº Fibonacci: %d\n", n, fib(n));
 }
