@@ -11,14 +11,15 @@ module REG_FILE_tb #(parameter reg_word_width = 32, parameter reg_addr_width = 5
 	integer i;
 
 	initial begin
-		$dumpfile("bin/regfile.vcd");
-		$dumpvars;
-		$dumpvars(1, DUT.regs[1]);
-		$dumpvars(1, DUT.regs[16]);
-		$dumpvars(1, DUT.regs[31]);
+		$dumpfile("bin/regfile.vcd");         // Cria o arquivo para visualização de onda
+		$dumpvars;                            // Coloca as variáveis no arquivo
+		$dumpvars(1, DUT.regs[1]);            // Coloca especificamente o registrador 01 do módulo instanciado
+		$dumpvars(1, DUT.regs[16]);           // Coloca especificamente o registrador 16 do módulo instanciado
+		$dumpvars(1, DUT.regs[31]);           // Coloca especificamente o registrador 31 do módulo instanciado
 
 		clk = 0;
 		write_en_i = 0;
+		// Mostra os valores dos registradores especificados
 		$display("CLOCK:  %d\nREG_0:  %d\nREG_16: %d\nREG_31: %d\n", clk, DUT.reg0, DUT.regs[16], DUT.regs[31]);
 		#20
 		write_data_i = 11;
